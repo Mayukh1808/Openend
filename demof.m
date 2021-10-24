@@ -1,0 +1,25 @@
+clc;
+clear all;
+close all;
+t=0:0.001:1;
+fm=5;
+fc=50;
+m=(1/2*sin(2*pi*fm*t));
+subplot(6,1,1);
+plot(m);
+title('message  signal');
+C=cos(2*pi*fc*t);
+subplot(6,1,2);
+plot(C);
+title('carrier Signal'); 
+y=m.*C;
+subplot(6,1,3);
+plot(y);
+title('DSBSC signal');
+%demodulation of DSBSC
+s1=y.*c;
+[b,a]=butter(5,0.1);
+s2=filter(b,a,s1);
+subplot(6,1,4);
+plot(s2);
+title('demodulation of dsbsc');

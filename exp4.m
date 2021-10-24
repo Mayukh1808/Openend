@@ -1,0 +1,13 @@
+x = 0:0.0001:10;
+f = 10*cos (x);
+subplot (2,1,1);
+plot (f);
+xlabel ("time");
+ylabel ("amplitude");
+title ("Mayukh & 1904428");
+y = diff (f);
+subplot (2,1,2);
+plot (y);
+xlabel ("time");
+ylabel ("amplitude");
+title ("Mayukh & 1904428");

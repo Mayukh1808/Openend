@@ -1,0 +1,26 @@
+clc;
+clear all;
+close all;
+t=[0:0.001:1];
+f1=5;
+m1=cos(2*pi*f1*t);
+m2=hilbert(m1);
+subplot(4,2,[1,2]);
+plot(t,m1);
+
+title('message &1904428');
+f2=100;
+c1=sin(2*pi*f2*t);
+c2=cos(2*pi*f2*t);
+subplot(4,2,[3,4]);
+plot(t,c1);
+title('carrier &1904428');
+s=m1.*c1- m2.*c2;
+subplot(4,2,[5,6]);
+plot(t,s);
+title('SSB-SC &1904428');
+s1=s.*c1;
+[b,a]=butter(5,0.1);
+s2=filter(b,a,s1);
+subplot(4,2,[7,8]);
+plot(t,s2);title('demodulation &1904428');

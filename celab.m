@@ -1,0 +1,28 @@
+x=0:0.001:1
+y= sin(2*pi*10*x)
+subplot(2,2,1)
+plot(x,y)
+title("sin wave")
+xlabel("Time")
+ylabel("Amplitude")
+w=0:0.001:1
+z=cos(2*pi*10*x)
+subplot(2,2,2)
+plot(w,z)
+title("Cos wave")
+xlabel("Time")
+ylabel("Amplitude")
+L=0:0.001:1
+K=sawtooth(2*pi*10*x,0.5)
+subplot(2,2,3)
+plot(L,K)
+title("Traingular Wave")
+xlabel("Time")
+ylabel("Amplitude")
+C=0:0.001:1
+B = 1*square(2*pi*5*C)
+subplot(2,2,4)
+plot(C, B)
+title("Square wave")
+xlabel("Time")
+ylabel("Amplitude")
